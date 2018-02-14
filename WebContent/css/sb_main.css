@@ -1,0 +1,52 @@
+@CHARSET "EUC-KR";
+
+
+      #jb-container {
+        width: 940px;
+        margin: 0px auto;
+        padding: 0px;
+        border: 1px solid #bcbcbc;
+      }
+      #jb-header {
+      	height:100px;
+     	padding:0px;
+		spacing:0px;
+      }
+      #jb-mid-header {
+      	height:40px;
+        padding:0px;
+		spacing:0px;
+        
+       
+      }
+      #jb-content {
+        width: 690px;
+        height: 100%;
+        float: right;
+        border: 1px solid #bcbcbc;
+      }
+      #jb-sidebar {
+        width: 240px;
+        margin: 0px ;
+        padding: 0px;
+        float: left;
+        border: 1px solid #bcbcbc;
+      }
+      #jb_sidebar_1 {
+        width: 240px;
+        height:200px;
+      	float: top;
+         margin: 0px ;
+      }
+       #jb_sidebar_2 {
+        width: 240px;
+      	 margin: 0px ;
+        
+      }
+      #jb-footer {
+        clear: both;
+     
+        border: 1px solid #bcbcbc;
+      }
+   
+   
