@@ -66,7 +66,7 @@ function golist(){
 	        	</div>
 <div class="account-holder">
 	<h3 align="center">****Haru 회원등록****</h3><br>
-	<form name="writeForm" method="post" action="<%=request.getContextPath() %>/writePro.jsp">
+	<form name="writeForm" method="post" action="<%=request.getContextPath() %>/join/joinPro.jsp">
 	<div class="form-top">
 			<div class="form-group">
 				<label class="control-label required" for="phone">아이디<sup style="color:red">*</sup></label>

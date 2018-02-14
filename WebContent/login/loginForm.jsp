@@ -19,15 +19,16 @@ img{
 <div class="account-holder">
 	<img alt="그림" src="/webProject/images/ap.png" width="200px">
 	<h3 align="center">****Haru 로그인****</h3><br>
-<form name="loginForm" method="post" action="<%=request.getContextPath() %>/join/loginOk.jsp">
+<form name="loginForm" method="post" action="<%=request.getContextPath() %>/login/loginOk.jsp">
+
 	<div class="form-top">
 			<div class="form-group">
 				<label class="control-label required" for="phone">아이디: <sup style="color:red">*</sup></label>
-		        <input id="userId" name="userId" type="text" class="form-control" placeholder="Enter Password">
+		        <input id="m_id" name="m_id" type="text" class="form-control" placeholder="Enter Password">
 		    </div>
 			<div class="form-group">
 				<label class="control-label required" for="phone">비밀번호: <sup style="color:red">*</sup></label>
-		        <input id="userPass" name="userPass" type="text" class="form-control" placeholder="Enter Password">
+		        <input id="m_pwd" name="m_pwd" type="text" class="form-control" placeholder="Enter Password">
 		    </div>
 	
      </div>

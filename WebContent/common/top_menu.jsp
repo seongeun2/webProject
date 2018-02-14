@@ -4,7 +4,7 @@
 	String id = (String) session.getAttribute("id");
 	String logJsp = "";
 	if (id == null)
-		logJsp = "../join/login.jsp";
+		logJsp = "../login/login.jsp";
 	else
 		logJsp = "../join/welcome.jsp";
 %>

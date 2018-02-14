@@ -26,7 +26,7 @@ function changeView(value) {
         location.href="main.jsp?contentPage=/common/calendar.jsp";
     }
     else if(value == "6") {// 로그인페이지
-        location.href="main.jsp?contentPage=/join/loginForm.jsp";
+        location.href="main.jsp?contentPage=/login/loginForm.jsp";
    }
     else if(value == "7") {// 회원가입페이지
         location.href="main.jsp?contentPage=/join/joinForm.jsp";
