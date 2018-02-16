@@ -7,7 +7,7 @@
 body {
     font-family: Arial;
     padding: 10px;
-    background: #f1f1f1;
+    background: #f6f6f6;
 }
 
 /* Header/Blog Title */
@@ -16,7 +16,7 @@ body {
     font-size: 40px;
     text-align: center;
     background: #FFA7A7;
-    height: 260px;
+    height: 360px;
 }
 
 /* Style the top navigation bar */
@@ -54,14 +54,14 @@ body {
 /* Left column */
 .leftcolumn {   
     float: right;
-    width: 75%;
+    width: 78%;
 }
 
 /* Right column */
 .rightcolumn {
     float: left;
-    width: 25%;
-    background-color: #f1f1f1;
+    width: 22%;
+    background-color: #ffffff00;
     padding-right: 20px;
 }
 
@@ -83,9 +83,15 @@ body {
 /* Add a card effect for articles */
 .card {
      background-color: white;
-     padding: 20px;
+     padding: 40px;
      margin-top: 20px;
-     height: 800px;
+     height: 900px;
+}
+.card2 {
+     background-color: white;
+     padding: 40px;
+     margin-top: 20px;
+     height: 900px;
 }
 
 /* Clear floats after the columns */
@@ -118,4 +124,20 @@ body {
         float: none;
         width:100%;
     }
+}
+
+
+
+
+
+/*버튼 속성*/
+.loing_btn button{
+	border: 0;
+	background-color: white;
+	margin-right: 10px;
+	margin-bottom: 5px;
+}
+.loing_btn img{
+	height: 40px;
+	 
 }

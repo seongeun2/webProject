@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%request.setCharacterEncoding("euc-kr"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <style type="text/css">
@@ -16,7 +17,7 @@ img{
 <body>
 <div class="leftcolumn">
 <div class="card">
-<div class="account-holder">
+<div class="account-holder" style="margin-top: 100px;">
 	<img alt="그림" src="/webProject/images/ap.png" width="200px">
 	<h3 align="center">****Haru 로그인****</h3><br>
 <form name="loginForm" method="post" action="<%=request.getContextPath() %>/login/loginOk.jsp">

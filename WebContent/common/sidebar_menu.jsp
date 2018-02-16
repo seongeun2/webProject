@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%request.setCharacterEncoding("euc-kr"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <script type="text/javascript">
@@ -31,19 +32,46 @@ function changeView(value) {
     else if(value == "7") {// 회원가입페이지
         location.href="main.jsp?contentPage=/join/joinForm.jsp";
    }
+   
 }
 </script>
+<style>
+.haruimg{
+	background-color: #f1f1f1;
+    width: 100%;
+    text-align: center;
+    height:60px;
+    margin-bottom: 50px;
+    cursor:auto;
+}
+.haruimg img{
+    top:0; left: 0;
+	width: 100%;
+	height: 100%;
+}
+</style>
 <body>
 <!-- 좌측 사이드바 -->
   <div class="rightcolumn">
     <div class="card">
+    <br><br>
       <h2>HOME</h2>
       <h2>MENU</h2><br>
-	      <div class="fakeimg" onclick="changeView('1');">HARU 입력</div>
-	       <div class="fakeimg" onclick="changeView('2');">HARU 보기</div>
-	       <div class="fakeimg" onclick="changeView('3');">HARU 통계</div>
-	       <div class="fakeimg" onclick="changeView('4');">HARU 설정</div>
-	       <div class="fakeimg" onclick="changeView('5');">HARU 공지</div>
+	      <div class="haruimg" onclick="changeView('1');">
+	      	<img src="/webProject/images/haru_1.jpg" style="width: 100%; max-width: 760px; vertical-align: middle" />
+	      </div>
+	      <div class="haruimg" onclick="changeView('2');">
+	       	<img src="/webProject/images/haru_2.jpg" style="width: 100%; max-width: 760px; vertical-align: middle" />
+		  </div>
+	      <div class="haruimg" onclick="changeView('3');">
+	     	<img src="/webProject/images/haru_3.jpg" style="width: 100%; max-width: 760px; vertical-align: middle" />
+	      </div>
+	      <div class="haruimg" onclick="changeView('4');">
+	      	<img src="/webProject/images/haru_4.jpg" style="width: 100%; max-width: 760px; vertical-align: middle" />
+	      </div>
+	       <div class="haruimg" onclick="changeView('5');">
+	       	<img src="/webProject/images/haru_5.jpg" style="width: 100%; max-width: 760px; vertical-align: middle" />
+	       </div>
 	      <div class="fakeimg" onclick="changeView('11');">달력 보기</div>
       
     </div>

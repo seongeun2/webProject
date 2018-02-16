@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+<%request.setCharacterEncoding("euc-kr"); %>
 <%
 	String id = (String) session.getAttribute("id");
 	String logJsp = "";
 	if (id == null)
 		logJsp = "../login/login.jsp";
 	else
-		logJsp = "../join/welcome.jsp";
+		logJsp = "../login/welcome.jsp";
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -20,13 +21,21 @@
 .login input{
 	height: 50px;
 }
+a:link{ color: black; text-decoration: none;}
+a:visited { color: black; text-decoration: none;}
+
+}
+
 </style>
 </head>
 <body>
 <center>
-	<div class="header">
-	  <h2>하루, 쓰임</h2>
+	<!-- <div class="header"> -->
+	 <!--  <h2><a href="/webProject/main/main.jsp">하루, 쓰임</h2></a> -->
+	<div>
+	  <img alt="top" src="/webProject/images/main_top.jpg" style="height: 320px; width: 100%;">
 	  <jsp:include page="<%=logJsp %>"></jsp:include>
+	  
 	</div>
 </center>
 </body>

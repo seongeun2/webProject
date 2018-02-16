@@ -2,6 +2,7 @@
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <link type="text/css" href="/webProject/css/main.css" rel="stylesheet" />
+<%request.setCharacterEncoding("euc-kr"); %>
 <html>
 <head>
 </head>
@@ -18,7 +19,7 @@
 
 <!-- ¸ÞÀÎ -->
 <div class="row">
-<jsp:include page="<%=contentPage%>" />
+<jsp:include page="<%=contentPage%>" /> 
 <jsp:include page="../common/sidebar_menu.jsp"></jsp:include>
 </div>
 

@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-    session.invalidate();  //설정된 세션 값 사라짐
-    response.sendRedirect("/webProject/main/main.jsp");
-%>
+
 </body>
 </html>

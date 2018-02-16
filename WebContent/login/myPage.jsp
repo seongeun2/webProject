@@ -17,7 +17,7 @@ img{
 	margin: 0 auto;
 }
 </style>
-<script type="text/javascript">
+<script type="text/javascript">																				
 
 	
 function golist(){

@@ -1,35 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%request.setCharacterEncoding("euc-kr"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<style type="text/css">
+<link type="text/css" href="/webProject/css/main.css" rel="stylesheet" />
 
-.login input{
-	height: 30px;
-}
-</style>
-<!-- <script>
-function go() { 
-	parent.document.getElementById("jb-content").src = "../join/join.jsp"; 
-}
-function changeView(value) {
-	if(value == "11"){
-		location.href="main.jsp?contentPage=/common/NewFile.jsp";
-    }
-	else if(value == "2") {// test페이지
-        location.href="main.jsp?contentPage=/common/NewFile.jsp";
-   }
-}
-
-</script> -->
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="login" style="float: right;">
-	  <input type="button" value="로그인" onclick="changeView('6');"> 
-	  <input type="button" value="회원가입" onclick="changeView('7');">
+	<div class="login" style="background-color: #ff9fa0; height: 50px;">
+	  <div class="loing_btn" style="text-align: right;">
+	  <button onclick="changeView('0');"><img src="/webProject/images/home.jpg" alt="홈" ></button>
+	  <button onclick="changeView('6');"><img src="/webProject/images/login.jpg" alt="로그인" ></button>
+	  <button onclick="changeView('7');"><img src="/webProject/images/join.jpg" alt="회원가입"></button>
+  		</div>
   	</div>
 
 </body>
