@@ -123,8 +123,50 @@ public class memDAO {
 	return memList;
 	}
 	
+	//회원검색
+		public List memList(String keyField, String keyWord) {
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			List memList = null;
+			String sql="";
+			try {
+				conn = getConnection();
+			
+				if(keyWord != null && !keyWord.equals("")) {
+					sql ="select m_num, m_id, m_name, m_birth, m_reg_date, m_level from memberbd "
+						+ "where "+keyField.trim()+" like '%"+keyWord.trim()+"%' order by m_reg_date desc";
+				}else {
+					sql = "select m_num, m_id, m_name, m_birth, m_reg_date, m_level from memberbd "
+							+ "order by m_reg_date desc";
+				}
+				
+				
+				pstmt = conn.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				
+				if(rs.next()) {
+					memList = new ArrayList();
+					do {
+						memVO member = new memVO();
+						member.setM_num(rs.getInt("m_num"));
+						member.setM_id(rs.getString("m_id"));
+						member.setM_name(rs.getString("m_name"));
+						member.setM_birth(rs.getString("m_birth"));
+						member.setM_reg_date(rs.getTimestamp("m_reg_date"));
+						member.setM_level(rs.getString("m_level"));
+						memList.add(member);
+					
+					} while(rs.next());
+				}
+			}catch(Exception e) {
+				e.printStackTrace();
+		}finally {close(conn, rs, pstmt);}
+		return memList;
+		}
 	
-	//회원수 Count
+	
+	/*//회원수 Count
 	public int SelectCountMem() {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -146,7 +188,40 @@ public class memDAO {
 			e.printStackTrace();
 	}finally {close(conn, rs, pstmt);}
 	return count;
-	}
+	}*/
+	
+	//회원수 Count
+		public int SelectCountMem(String keyField,String keyWord) {
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			String sql="";
+			int count = 0;
+			
+			try {
+				conn = getConnection();
+				sql = "select nvl(count(*),0) from memberbd where ";
+				
+				if(keyWord != null && !keyWord.equals("")) {
+					sql ="select nvl(count(*),0) from memberbd  "
+						+ "where "+keyField.trim()+" like '%"+keyWord.trim()+"%' order by m_reg_date desc";
+					
+				}else {
+					sql = "select nvl(count(*),0) from memberbd ";
+				}
+				
+				pstmt = conn.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				
+				if(rs.next()) {
+					count=rs.getInt(1);
+				}
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+		}finally {close(conn, rs, pstmt);}
+		return count;
+		}
 	
 	
 	//회원상세보기

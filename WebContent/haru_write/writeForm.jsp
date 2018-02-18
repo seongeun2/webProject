@@ -8,6 +8,39 @@ tr{
 	border: solid 1px;
 }
 </style>
+<script type="text/javascript">
+function doChange(srcE, targetId){
+    var val = srcE.options[srcE.selectedIndex].value;
+    var targetE = document.getElementById(targetId);
+    removeAll(targetE);
+
+    if(val == '1'){	//지출
+        addOption('식비', targetE);
+        addOption('교통비', targetE);
+        addOption('통신비', targetE);
+    }
+    else if(val == '2'){ //수입
+        addOption('급여', targetE);
+        addOption('이자수익', targetE);
+        addOption('기타', targetE);
+    }
+}
+
+function addOption(value, e){
+    var o = new Option(value);
+    try{
+        e.add(o);
+    }catch(ee){
+        e.add(o, null);
+    }
+}
+
+function removeAll(e){
+    for(var i = 0, limit = e.options.length; i < limit - 1; ++i){
+        e.remove(1);
+    }
+}
+</script>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
@@ -15,7 +48,7 @@ tr{
 <body>
 
 <div class="leftcolumn">
-<div class="card">
+<div class="card2">
 <form action="/webProject/haru_write/writeForm2.jsp" method="post">
 	<table>
 		<tr>
@@ -28,25 +61,21 @@ tr{
 		<tr>
 			<td><input type="text" name="date"></td>	<!-- 날짜 -->
 			<td>
-				<select name="option">
-					<option>==선택==</option>
-					<option value="1">지출</option>
-					<option value="2">수입</option>
-				</select>
+			    <select name="selOne" id="selOne" onchange="doChange(this, 'selTwo')">
+			        <option value="default">---항목선택---</option>
+			        <option value="1">지출</option>
+			        <option value="2">수입</option>
+			    </select>
 			</td>
 			<td>
-				<select name="account">
-					<option>==상위항목==</option>
-					<option value="10">식비</option>
-					<option value="11">교통비</option>
-					<option value="12">통신비</option>
-				</select>
+			    <select name="selTwo" id="selTwo">
+			        <option value="default">---계정 선택---</option>
+			    </select>
 			</td>
 			<td><input type="text" name="content"></td>
 			<td><input type="text" name="price"></td>
 			<td><input type="submit" value="저장"></td>
 		</tr>
-		
 	</table>
 	</form>
 </div>

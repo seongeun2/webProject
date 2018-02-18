@@ -16,7 +16,7 @@ img{
 </head>
 <body>
 <div class="leftcolumn">
-<div class="card">
+<div class="card2">
 <div class="account-holder" style="margin-top: 100px;">
 	<img alt="그림" src="/webProject/images/ap.png" width="200px">
 	<h3 align="center">****Haru 로그인****</h3><br>

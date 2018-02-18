@@ -4,9 +4,11 @@
 <%
 	String id = (String) session.getAttribute("id");
 	String logJsp = "";
-	if (id == null)
-		logJsp = "../login/login.jsp";
-	else
+	if (id == null){ /*로그인 기록없을시*/
+		logJsp = "../login/login.jsp"; }
+	else if(id.equals("admin")){ /*관리자 로그인시*/
+		logJsp = "../login/welcome_ad.jsp";	}
+	else	/*일반사용자 로그인시*/
 		logJsp = "../login/welcome.jsp";
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

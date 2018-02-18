@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BoardDAO {
 	private static BoardDAO instance = new BoardDAO();
@@ -47,10 +49,67 @@ public class BoardDAO {
 		}
 	
 	
-	//입력
-	public void write() {
-		
-	}
+	//가계부리스트 (List)
+		public List mainList(String id) {
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			List mainList = null;
+			String sql="";
+			try {
+				conn = getConnection();
+				sql = "select main_writeday, main_option, main_account, main_content, main_price from mainBoard where m_id=?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, id);
+				rs = pstmt.executeQuery();
+				
+				if(rs.next()) {
+					mainList = new ArrayList();
+					do {
+						BoardVO mainboard = new BoardVO();
+					/*	mainboard.setMain_num(rs.getInt("main_num"));*/
+						mainboard.setMain_writeday(rs.getTimestamp("main_writeday"));
+						mainboard.setMain_option(rs.getString("main_option"));
+						mainboard.setMain_account(rs.getString("main_account"));
+						mainboard.setMain_content(rs.getString("main_content"));
+						mainboard.setMain_price(rs.getInt("main_price"));
+						mainList.add(mainboard);
+					
+					} while(rs.next());
+				}
+			}catch(Exception e) {
+				e.printStackTrace();
+		}finally {close(conn, rs, pstmt);}
+		return mainList;
+		}
 	
+		
+		
+		
+		//main 게시물수 Count
+		public int mainCount(String id) {
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			String sql="";
+			int count = 0;
+			
+			try {
+				conn = getConnection();
+				sql = "select nvl(count(*),0) from mainboard where m_id=?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, id);
+				rs = pstmt.executeQuery();
+				
+				if(rs.next()) {
+					count=rs.getInt(1);
+				}
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+		}finally {close(conn, rs, pstmt);}
+		return count;
+		}	
+		
 	
 }
