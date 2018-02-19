@@ -37,13 +37,14 @@ function golist(){
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link type="text/css" href="/memberboard/css/main.css" rel="stylesheet" />
+<link type="text/css" href="/webProject/css/form.css" rel="stylesheet" />
 <title>정보수정</title>
 </head>
 <body>
 <div class="leftcolumn">
 <div class="card2">		
 <!--forms-->
-<img alt="그림" src="/memberboard/image/ap.png" width="200px">
+<img alt="그림" src="/webProject/images/ap.png" width="200px">
 <div class="space-`medium">
 	<div class="container">
 		<div class="row">

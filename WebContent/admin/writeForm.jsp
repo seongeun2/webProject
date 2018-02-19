@@ -53,7 +53,6 @@ function golist(){	//회원목록으로 이동
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-<link type="text/css" href="/webProject/css/form.css" rel="stylesheet" />
 <title>회원등록</title>
 </head>
 <body>

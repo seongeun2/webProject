@@ -25,7 +25,7 @@ img{
 	<div class="form-top">
 			<div class="form-group">
 				<label class="control-label required" for="phone">아이디: <sup style="color:red">*</sup></label>
-		        <input id="m_id" name="m_id" type="text" class="form-control" placeholder="Enter Password">
+		        <input id="m_id" name="m_id" type="text" class="form-control" placeholder="Enter ID">
 		    </div>
 			<div class="form-group">
 				<label class="control-label required" for="phone">비밀번호: <sup style="color:red">*</sup></label>

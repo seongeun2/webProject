@@ -31,7 +31,7 @@ label { }
 .textarea.form-control { }
 .required { }
 
-.form-control { border-radius: 0px; font-size: 16px; font-weight: 500; width: 500px; height: 20px; padding: 14px; line-height: 1.42857143; background-image:; border: transparent; background-color: #f1f1f1; letter-spacing: 1px; margin-bottom: 10px; -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075); box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075); }
+.form-control { border-radius: 0px; font-size: 16px; font-weight: 500; width: 500px; height: 60px; padding: 14px; line-height: 1.42857143; background-image:; border: transparent; background-color: #f1f1f1; letter-spacing: 1px; margin-bottom: 10px; -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075); box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075); }
 .input-group { position: relative; display: table; border-collapse: separate; }
 input[type=checkbox], input[type=radio] { margin: 8px 0 0; margin-top: 1px\9; line-height: normal; }
 select {color: #aca5a5; width: 527px; /* 원하는 너비설정 */ padding: .8em .5em; /* 여백으로 높이 설정 */ font-family: inherit; /* 폰트 상속 */ background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg) no-repeat 95% 50%; /* 네이티브 화살표 대체 */ border: 1px solid #999; border-radius: 0px; /* iOS 둥근모서리 제거 */ -webkit-appearance: none; /* 네이티브 외형 감추기 */ -moz-appearance: none; appearance: none; }
