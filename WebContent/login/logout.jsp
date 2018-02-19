@@ -7,9 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-    session.invalidate();  //설정된 세션 값 사라짐
-    response.sendRedirect("/webProject/main/main.jsp");
-%>
+<%session.invalidate();%>  //설정된 세션 값 사라짐
+
+<script type="text/javascript">
+alert("로그아웃 되었습니다.")
+location.href="/webProject/main/main.jsp";
+</script>    
+
 </body>
 </html>

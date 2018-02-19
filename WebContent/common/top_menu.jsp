@@ -35,7 +35,7 @@ a:visited { color: black; text-decoration: none;}
 	<!-- <div class="header"> -->
 	 <!--  <h2><a href="/webProject/main/main.jsp">하루, 쓰임</h2></a> -->
 	<div>
-	  <img alt="top" src="/webProject/images/main_top.jpg" style="height: 320px; width: 100%;">
+	  <img alt="top" src="/webProject/images/main_top.jpg" style="height: 260px; width: 100%;">
 	  <jsp:include page="<%=logJsp %>"></jsp:include>
 	  
 	</div>

@@ -12,7 +12,7 @@
 <div class="leftcolumn">
     <div class="card2">
       <h2>TITLE HEADING</h2>
-      <img alt="그림" src="/webProject/images/main_1.jpg" style="height: 650px; width: 100%;">
+      <img alt="그림" src="/webProject/images/main_1.jpg" style="height: 800px; width: 100%;">
       <p>
      <div class="fakeimg" style="height:100px;">Image</div>
     </div>

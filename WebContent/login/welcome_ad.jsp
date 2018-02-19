@@ -34,7 +34,7 @@ function View(value) {
 <div class="top_menu" style="background-color: #ff9fa0; height: 50px; text-align: right;">
 <!-- <div class="login" style="background-color: #ff9fa0; height: 50px;"> -->
  <div class="loing_btn" style="text-align: right;">
-	<b style="font-size: 28px; margin-bottom: 10px;"><%=session.getAttribute("name") %>님 환영합니다.</b>
+	<b style="font-size: 20px; margin-bottom: 10px;"><%=session.getAttribute("name") %>님 환영합니다.</b>
 	<button onclick="View('0');"><img src="/webProject/images/home.jpg" alt="홈" style="float: left;"></button>
 	<button onclick="View2();"><img src="/webProject/images/mem.jpg" alt="회원관리" style="float: left;"></button>
 	<button onclick="logout();"><img src="/webProject/images/logout.jpg" alt="로그아웃" ></button>

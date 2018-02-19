@@ -24,9 +24,12 @@ function update() {
 	var v = document.updateForm;
 	v.submit();
 }
+function rewrite(){
+	 document.updateForm.reset();
+}
 	
 function golist(){
-	location.href = "/memberboard/list.jsp"; 
+	location.href = "/webProject/main/main.jsp?contentPage=/admin/list.jsp"; 
 	}
 
 
@@ -37,7 +40,8 @@ function golist(){
 <title>정보수정</title>
 </head>
 <body>
-	
+<div class="leftcolumn">
+<div class="card2">		
 <!--forms-->
 <img alt="그림" src="/memberboard/image/ap.png" width="200px">
 <div class="space-`medium">
@@ -48,7 +52,7 @@ function golist(){
 	        	</div>
 <div class="account-holder">
 	<h3 align="center">****Haru 정보수정****</h3><br>
-	<form name="updateForm" method="post" action="<%=request.getContextPath() %>/updatePro.jsp">
+	<form name="updateForm" method="post" action="<%=request.getContextPath() %>/admin/updatePro.jsp">
 	<input type="hidden" name="m_num" value="<%=vo.getM_num() %>">
 	<div class="form-top">
 			<div class="form-group">
@@ -74,7 +78,13 @@ function golist(){
             </div>
         <div class="form-group">
                 <label class="control-label required" for="name">회원등급</label>
-                <input id="m_level" name="m_level" type="text" class="form-control" value="<%=vo.getM_level() %>">
+                <select name="m_level">
+                	<option value="">=회원등급선택=</option>
+			        <option value="새싹회원">새싹회원</option>
+			        <option value="정회원">정회원</option>
+			        <option value="우수회원">우수회원</option>
+			        <option value="관리자">관리자</option>
+			   </select>
         </div>
             
         </div>
@@ -91,6 +101,7 @@ function golist(){
 </div>
 </div>
 </div>
+</div></div>
 <%
 	}catch(Exception e){}
 %>

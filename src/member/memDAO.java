@@ -83,8 +83,8 @@ public class memDAO {
 		}
 	}
 	
-	//회원목록 (List)
-	public List memList(int startRow, int endRow) {
+	//회원목록 (List) 검색 및 페이지처리
+	public List memList(int startRow, int endRow, String keyField, String keyWord) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -92,12 +92,18 @@ public class memDAO {
 		String sql="";
 		try {
 			conn = getConnection();
-			/*sql = "select m_num, m_id, m_name, m_birth, m_reg_date, m_level from memberbd "
-					+ "order by m_reg_date desc";*/
-			sql = "select * from (select rownum rnum ,a.* "+
-				  "from (select m_num, m_id, m_name, m_birth, m_reg_date, m_level " + 
-				  "from memberbd order by m_reg_date desc) a ) " +
-				  "where rnum between ? and ? ";
+		
+			if(keyWord != null && !keyWord.equals("")) {
+				sql = "select * from (select rownum rnum ,a.* "+
+					  "from (select m_num, m_id, m_name, m_birth, m_reg_date, m_level " + 
+					  "from memberbd where "+keyField.trim()+" like '%"+keyWord.trim()+"%' order by m_reg_date desc) a ) " +
+					  "where rnum between ? and ? ";
+			}else {
+				sql = "select * from (select rownum rnum ,a.* "+
+					  "from (select m_num, m_id, m_name, m_birth, m_reg_date, m_level " + 
+					  "from memberbd order by m_reg_date desc) a ) " +
+					  "where rnum between ? and ? ";
+			}
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, startRow);
 			pstmt.setInt(2, endRow);
@@ -120,54 +126,13 @@ public class memDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 	}finally {close(conn, rs, pstmt);}
+	System.out.println("무슨 값이 들어오나"+memList);
 	return memList;
 	}
 	
-	//회원검색
-		public List memList(String keyField, String keyWord) {
-			Connection conn = null;
-			PreparedStatement pstmt = null;
-			ResultSet rs = null;
-			List memList = null;
-			String sql="";
-			try {
-				conn = getConnection();
-			
-				if(keyWord != null && !keyWord.equals("")) {
-					sql ="select m_num, m_id, m_name, m_birth, m_reg_date, m_level from memberbd "
-						+ "where "+keyField.trim()+" like '%"+keyWord.trim()+"%' order by m_reg_date desc";
-				}else {
-					sql = "select m_num, m_id, m_name, m_birth, m_reg_date, m_level from memberbd "
-							+ "order by m_reg_date desc";
-				}
-				
-				
-				pstmt = conn.prepareStatement(sql);
-				rs = pstmt.executeQuery();
-				
-				if(rs.next()) {
-					memList = new ArrayList();
-					do {
-						memVO member = new memVO();
-						member.setM_num(rs.getInt("m_num"));
-						member.setM_id(rs.getString("m_id"));
-						member.setM_name(rs.getString("m_name"));
-						member.setM_birth(rs.getString("m_birth"));
-						member.setM_reg_date(rs.getTimestamp("m_reg_date"));
-						member.setM_level(rs.getString("m_level"));
-						memList.add(member);
-					
-					} while(rs.next());
-				}
-			}catch(Exception e) {
-				e.printStackTrace();
-		}finally {close(conn, rs, pstmt);}
-		return memList;
-		}
-	
-	
-	/*//회원수 Count
-	public int SelectCountMem() {
+
+	//회원수 Count
+	public int SelectCountMem(int startRow, int endRow, String keyField, String keyWord) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -176,53 +141,35 @@ public class memDAO {
 		
 		try {
 			conn = getConnection();
-			sql = "select nvl(count(*),0) from memberbd";
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
 			
+			if(keyWord != null && !keyWord.equals("")) {
+				sql = "select nvl(count(*),0) from (select rownum rnum ,a.* "+
+					  "from (select m_num, m_id, m_name, m_birth, m_reg_date, m_level " + 
+					  "from memberbd where "+keyField.trim()+" like '%"+keyWord.trim()+"%' order by m_reg_date desc) a ) " +
+					  "where rnum between ? and ? ";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, startRow);
+				pstmt.setInt(2, endRow);
+				rs = pstmt.executeQuery();
+				
+			}else {
+				sql = "select nvl(count(*),0) from (select rownum rnum ,a.* "+
+					  "from (select m_num, m_id, m_name, m_birth, m_reg_date, m_level " + 
+					  "from memberbd order by m_reg_date desc) a ) ";
+				pstmt = conn.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+			}
 			if(rs.next()) {
 				count=rs.getInt(1);
 			}
 			
 		}catch(Exception e) {
 			e.printStackTrace();
-	}finally {close(conn, rs, pstmt);}
-	return count;
-	}*/
-	
-	//회원수 Count
-		public int SelectCountMem(String keyField,String keyWord) {
-			Connection conn = null;
-			PreparedStatement pstmt = null;
-			ResultSet rs = null;
-			String sql="";
-			int count = 0;
-			
-			try {
-				conn = getConnection();
-				sql = "select nvl(count(*),0) from memberbd where ";
-				
-				if(keyWord != null && !keyWord.equals("")) {
-					sql ="select nvl(count(*),0) from memberbd  "
-						+ "where "+keyField.trim()+" like '%"+keyWord.trim()+"%' order by m_reg_date desc";
-					
-				}else {
-					sql = "select nvl(count(*),0) from memberbd ";
-				}
-				
-				pstmt = conn.prepareStatement(sql);
-				rs = pstmt.executeQuery();
-				
-				if(rs.next()) {
-					count=rs.getInt(1);
-				}
-				
-			}catch(Exception e) {
-				e.printStackTrace();
 		}finally {close(conn, rs, pstmt);}
 		return count;
 		}
-	
+
+
 	
 	//회원상세보기
 	public memVO SelectViewMem(int num) {

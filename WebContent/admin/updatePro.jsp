@@ -18,7 +18,10 @@
 	int pwdcheck = dao.updateMember(member);
 %>
 <%	if(pwdcheck==1){ %>
-    <META http-equiv=refresh content="0;url=list.jsp">
+	<script>
+	alert("정보가 수정 되었습니다");
+	</script>
+    <META http-equiv=refresh content="0;url=/webProject/main/main.jsp?contentPage=/admin/list.jsp?">
 
 
 <%	}else{ %>

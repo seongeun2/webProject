@@ -6,8 +6,10 @@
 
 body {
     font-family: Arial;
-    padding: 10px;
-    background: #f6f6f6;
+    padding: 20px;
+    padding-left: 180px;
+    padding-right: 180px;
+    background: white;
 }
 
 /* Header/Blog Title */
@@ -83,15 +85,15 @@ body {
 /* Add a card effect for articles */
 .card {
      background-color: #9d7a772b;
-     padding: 40px;
+     padding: 20px;
      margin-top: 20px;
-     height: 900px;
+     height: 1000px;
 }
 .card2 {
      background-color: white;
-     padding: 40px;
+     padding: 20px;
      margin-top: 20px;
-     height: 900px;
+     height: 1000px;
 }
 
 /* Clear floats after the columns */
@@ -138,6 +140,6 @@ body {
 	margin-bottom: 5px;
 }
 .loing_btn img{
-	height: 40px;
+	height: 35px;
 	 
 }

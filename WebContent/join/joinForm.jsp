@@ -55,7 +55,7 @@ function golist(){
 </head>
 <body>
 <div class="leftcolumn">
-<div class="card">	
+<div class="card2">	
 <!--forms-->
 <img alt="그림" src="/webProject/images/ap.png" width="200px">
 <div class="space-`medium">
@@ -89,8 +89,12 @@ function golist(){
                 <label class="control-label required" for="email">Email</label>
                 <input id="m_email" name="m_email" type="text" class="form-control" placeholder="Enter Email Address">
             </div>
-        <div class="form-group">
-                <label class="control-label required" for="name">회원등급</label>
+            <div class="form-group">
+                <label class="control-label required" for="email">회원등급</label>
+                <input id="m_level" name="m_level" type="text" class="form-control" value="새싹회원" readonly />
+            </div>
+        <!-- <div class="form-group">
+                <label class="control-label required" for="name">회원등급</label>readonly /
                 <select name="m_level">
                 	<option value="">=회원등급선택=</option>
 			        <option value="새싹회원">새싹회원</option>
@@ -98,7 +102,7 @@ function golist(){
 			        <option value="우수회원">우수회원</option>
 			        <option value="관리자">관리자</option>
 			   </select>
-        </div>
+        </div> -->
             
         </div>
         

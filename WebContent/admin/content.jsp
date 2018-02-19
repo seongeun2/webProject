@@ -23,15 +23,16 @@ img{
 
 	
 function golist(){
-	location.href = "/webProject/admin/list.jsp"; 
+	location.href = "/webProject/main/main.jsp?contentPage=/admin/list.jsp"; 
+	
 	}
 	
 function update(){
-	location.href = "updateForm.jsp?num=<%=vo.getM_num()%>";
+	location.href = "/webProject/main/main.jsp?contentPage=/admin/updateForm.jsp?num=<%=vo.getM_num()%>";
 }
 
 function m_delete(){
-	location.href = "deleteForm.jsp?num=<%=vo.getM_num()%>";
+	location.href = "/webProject/main/main.jsp?contentPage=/admin/deleteForm.jsp?num=<%=vo.getM_num()%>";
 }
 
 
@@ -44,7 +45,8 @@ function m_delete(){
 </head>
 
 <body>
-	
+<div class="leftcolumn">
+<div class="card2">	
 <!--forms-->
 <img alt="±×¸²" src="/webProject/images/ap.png" width="200px">
 <div class="space-`medium">
@@ -97,6 +99,7 @@ function m_delete(){
 </div>
 </div>
 </div>
+</div></div>
 <%
 	}catch(Exception e){}
 %>

@@ -29,11 +29,13 @@ function memberdelete() {
 	v.submit();
 }
 function golist(){
-	location.href = "/memberboard/list.jsp"; 
+	location.href = location.href = "/webProject/main/main.jsp?contentPage=/admin/list.jsp"; 
 }
 </script>
 </head>
 <body>
+<div class="leftcolumn">
+<div class="card2">	
 <img alt="그림" src="/memberboard/image/ap.png" width="200px">
 <div class="space-`medium">
 	<div class="container">
@@ -43,7 +45,7 @@ function golist(){
 	        	</div>
 <div class="account-holder">
 	<h3 align="center">****Haru 회원탈퇴****</h3><br>
-<form name="deleteForm" method="post" action="<%=request.getContextPath() %>/deletePro.jsp">
+<form name="deleteForm" method="post" action="<%=request.getContextPath() %>/admin/deletePro.jsp">
 	<div class="form-top">
 		<p align=center><b>비밀번호를 입력해주세요</b></p>
 			<div class="form-group">
@@ -64,6 +66,7 @@ function golist(){
 </div>
 </div>
 </div>
+</div></div>
 <%
 	}catch(Exception e){}
 %>
