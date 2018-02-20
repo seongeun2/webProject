@@ -28,8 +28,8 @@ function rewrite(){
 	 document.updateForm.reset();
 }
 	
-function golist(){
-	location.href = "/webProject/main/main.jsp?contentPage=/admin/list.jsp"; 
+function goback(){
+	history.go(-1);
 	}
 
 
@@ -78,14 +78,8 @@ function golist(){
                 <input id="m_email" name="m_email" type="text" class="form-control" value="<%=vo.getM_email() %>">
             </div>
         <div class="form-group">
-                <label class="control-label required" for="name" >회원등급</label>
-                <select name="m_level" style="width: 500px; height: 50px;">
-                	<option value="">=회원등급선택=</option>
-			        <option value="새싹회원">새싹회원</option>
-			        <option value="정회원">정회원</option>
-			        <option value="우수회원">우수회원</option>
-			        <option value="관리자">관리자</option>
-			   </select>
+                <label class="control-label required" for="name">회원등급</label>
+                <input id="m_email" name="m_email" type="text" class="form-control" value="<%=vo.getM_level() %>" readonly />
         </div>
             
         </div>
@@ -93,7 +87,7 @@ function golist(){
         <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12" style="text-align: center">
             <input type="button" class="btn btn-primary btn-block" onclick="update();" value="정보수정">
             <input type="button" class="btn btn-primary btn-block" onclick="rewrite();" value="다시작성">
-            <input type="button" class="btn btn-primary btn-block" onclick="golist();" value="회원목록">
+            <input type="button" class="btn btn-primary btn-block" onclick="goback();" value="이전">
         </div>
        <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
        </div>

@@ -9,13 +9,16 @@
 	text-align: right;
 }
 input{
-	height: 30px;
+	height: 50px;
 }
 </style>
 <script type="text/javascript">
 function logout() {
 		location.href="/webProject/login/logout.jsp";
     }
+function myhome(){
+	 location.href="main.jsp?contentPage=/myhome/my_content.jsp";
+}
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 
@@ -27,11 +30,8 @@ function logout() {
 <!-- <div class="login" style="background-color: #ff9fa0; height: 50px;"> -->
  <div class="loing_btn" style="text-align: right;">
 	<b style="font-size: 28px; margin-bottom: 10px;"><%=session.getAttribute("name") %>님 환영합니다.</b>
-	
-	<button onclick="changeView('0');"><img src="/webProject/images/myhome.jpg" alt="마이홈" style="float: left;"></button>
-	<!-- <input type="button" value="마이홈" >  -->
+	<button onclick="myhome();"><img src="/webProject/images/myhome.jpg" alt="마이홈" style="float: left;"></button>
 	<button onclick="logout();"><img src="/webProject/images/logout.jpg" alt="로그아웃" ></button>
-	<!-- <input type="submit" value="로그아웃" >  -->
 	</div>
 </div>
 <!-- </form> -->

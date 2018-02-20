@@ -9,7 +9,7 @@
 	text-align: right;
 }
 input{
-	height: 30px;
+	height: 50px;
 }
 </style>
 <script type="text/javascript">

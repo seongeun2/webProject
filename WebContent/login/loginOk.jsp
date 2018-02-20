@@ -32,8 +32,6 @@
 	  String name = dao.getname(id);
 	  session.setAttribute("id",id);
 	  session.setAttribute("name", name);	//name 저장 >> welcome 에 name을 넘겨줌
-	  System.out.println(name);
-	  
 	  response.sendRedirect("../main/main.jsp");
    }
 %>

@@ -95,6 +95,12 @@ body {
      margin-top: 20px;
      height: 1000px;
 }
+.card3 {
+     background-color: white;
+     /* padding: 20px; */
+     margin-top: 20px;
+     height: 1000px;
+}
 
 /* Clear floats after the columns */
 .row:after {

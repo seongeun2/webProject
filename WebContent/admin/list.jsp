@@ -5,6 +5,11 @@
 <%@page import="java.util.List"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%request.setCharacterEncoding("euc-kr"); %>
+<style>
+input{
+	height: 30px;
+}
+</style>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -131,7 +136,7 @@ if(count>0){
 	<br>
 	<!-- 회원 검색 -->
 	<form name ="search" method="post" style="text-align: center;">
-		<select name="keyField">
+		<select name="keyField" style="height: 30px;">
 		<option>선택</option>
 		<option value="m_id">아이디</option>
 		<option value="m_name">이름</option>

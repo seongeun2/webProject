@@ -1,11 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- 날짜선택 스크립트 -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script><!-- 날짜끝 -->
 <html>
-<style>
+<style>/*haru_writeForm */
 tr{
 	text-align: center;
 	border: solid 1px;
+}
+input {
+	height: 30px;
+}
+select {
+	height: 30px;
+}
+.haru_writeForm{
+	margin: 0 auto;
 }
 </style>
 <script type="text/javascript">
@@ -40,6 +53,12 @@ function removeAll(e){
         e.remove(1);
     }
 }
+//날짜선택 자바스크립트
+$(function() {
+	  $( "#datepicker1" ).datepicker({
+	    dateFormat: 'yy-mm-dd'
+	  });
+	});
 </script>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
@@ -50,7 +69,7 @@ function removeAll(e){
 <div class="leftcolumn">
 <div class="card2">
 <form action="/webProject/haru_write/writeForm2.jsp" method="post">
-	<table>
+	<table class=haru_writeForm>
 		<tr>
 			<td>날짜</td>
 			<td>항목</td>
@@ -59,7 +78,7 @@ function removeAll(e){
 			<td>금액</td>
 		</tr>
 		<tr>
-			<td><input type="text" name="date"></td>	<!-- 날짜 -->
+			<td><input type="text" id="datepicker1"></td>	<!-- 날짜 -->
 			<td>
 			    <select name="selOne" id="selOne" onchange="doChange(this, 'selTwo')">
 			        <option value="default">---항목선택---</option>

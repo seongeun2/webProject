@@ -10,11 +10,11 @@
 </head>
 <body>
 <div class="leftcolumn">
-    <div class="card2">
-      <h2>TITLE HEADING</h2>
+    <div class="card3">
       <img alt="그림" src="/webProject/images/main_1.jpg" style="height: 800px; width: 100%;">
       <p>
      <div class="fakeimg" style="height:100px;">Image</div>
+     <h2>TITLE HEADING</h2>
     </div>
   </div>
 </body>

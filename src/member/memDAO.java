@@ -126,7 +126,6 @@ public class memDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 	}finally {close(conn, rs, pstmt);}
-	System.out.println("무슨 값이 들어오나"+memList);
 	return memList;
 	}
 	
@@ -205,6 +204,41 @@ public class memDAO {
 		return member;
 		}
 	
+	//내정보 보기
+	public memVO myhomeView(String id) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql="";
+		memVO member = null;
+		
+		try {
+			conn = getConnection();
+			
+			sql = "select * from memberbd where m_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				member = new memVO();
+				member.setM_num(rs.getInt("m_num"));
+				member.setM_id(rs.getString("m_id"));
+				member.setM_name(rs.getString("m_name"));
+				member.setM_birth(rs.getString("m_birth"));
+				member.setM_email(rs.getString("m_email"));
+				member.setM_pwd(rs.getString("m_pwd"));
+				member.setM_reg_date(rs.getDate("m_reg_date"));
+				member.setM_level(rs.getString("m_level"));
+				
+				}	
+			}catch(Exception e) {
+				e.printStackTrace();
+		}finally {close(conn, rs, pstmt);}
+		return member;
+		}
+	
+	
 	
 	//정보수정
 	public int updateMember(memVO member) {
@@ -258,22 +292,12 @@ public class memDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-			
-			
-		/*String SQL = "SELECT userPassword userName FROM USER1 WHERE userID = ?";*/
 		String sql = "SELECT m_pwd, m_name FROM memberbd WHERE m_id=?";
-	
-		
-		System.out.println("db:::"+sql);
-		
 		try{
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
-			System.out.println("id:::"+id);
-			System.out.println("pass"+ pass);
 			pstmt.setString(1, id);
 			rs=pstmt.executeQuery();
-			System.out.println("rs==="+rs);
 			if(rs.next()) {
 				if(rs.getString(1).equals(pass)) {
 					
@@ -311,8 +335,6 @@ public class memDAO {
 		}
 		return name;
 	}
-		
-		
 		
 		
 }
