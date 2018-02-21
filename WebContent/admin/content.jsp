@@ -70,7 +70,7 @@ function m_delete(){
 		    
 		    <div class="form-group">
 		        <label class="control-label required" for="name">이름<sup style="color:red">*</sup></label>
-		        <input id="m_id" name="m_id" type="text" class="form-control" value="<%=vo.getM_name() %>" readonly />
+		        <input id="m_name" name="m_name" type="text" class="form-control" value="<%=vo.getM_name() %>" readonly />
 		    </div>
             <div class="form-group">
                 <label class="control-label required" for="phone">생년월일</label>

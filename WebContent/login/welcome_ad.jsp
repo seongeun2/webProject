@@ -17,7 +17,7 @@ function logout() {
 		location.href="/webProject/login/logout.jsp";
     }
 function View2(){
-        location.href="main.jsp?contentPage=/admin/list.jsp";
+        location.href="main.jsp?contentPage=/admin/list2.jsp";
 }
 function View(value) {
 	if(value == "0"){ // HOME 버튼 클릭시 첫화면으로 이동

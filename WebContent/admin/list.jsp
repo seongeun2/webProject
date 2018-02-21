@@ -45,6 +45,12 @@ function Popup() {
 </script>
 </head>
 <%
+/* int num = Integer.parseInt(request.getParameter("memnum")); */
+/* int num = member.getM_num();
+memVO vo = dao.ViewMem(num); */
+memDAO dao = memDAO.getInstance();
+
+
 //검색처리
 String keyField = request.getParameter("keyField");
 String keyWord = request.getParameter("keyWord");
@@ -59,12 +65,7 @@ int currentPage = Integer.parseInt(pageNum);
 int startRow = (currentPage-1) * pageSize+1;
 int endRow = currentPage * pageSize;
 
-memDAO dao = memDAO.getInstance();
-
-//되는지 모르겟다...
-int num = Integer.parseInt(request.getParameter("memnum"));
-memVO vo = dao.SelectViewMem(num);
-//------
+/* memDAO dao = memDAO.getInstance(); */
 
 int count = 0;
 List memList = null;
@@ -116,7 +117,7 @@ if(count>0){
 			<td align="center" width="50"><%=member.getM_num()%></td>
 			<td align="center" width="50">
 <%-- 			<a href="/webProject/main/main.jsp?contentPage=/admin/content.jsp?memnum=<%=member.getM_num()%>"><%=member.getM_id() %></a></td>
- --%>			<a href='javascript:void(0);' onclick="document.getElementById('id03').style.display='block'"><%=member.getM_id() %></a></td>
+ --%>			<a href='javascript:void(0);' onclick="document.getElementById('id03').style.display='block'" ><%=member.getM_id() %></a></td>
 		
 			<td align="center" width="50"><%=member.getM_name() %> </td>
 			<td align="center" width="70"><%=member.getM_birth() %></td>
@@ -179,18 +180,18 @@ if(count>0){
         	<table>
         	<tr>
         		<td><label><b>회원번호</b><sub style="color: red;">*&nbsp;</sub></label></td>
-        		<%-- <td><input class="w3-border w3-margin-bottom" type="text" id="m_num" name="m_num" style="height: 30px;" value="<%=vo.getM_num() %>" readonly>&nbsp;&nbsp; --%>
         		<%-- <td><input id="m_num" name="m_num" type="text" class="form-control" value="<%=vo.getM_id() %>" readonly /></td> --%>
-				<td><input id="m_num" name="m_num" type="text" value="<%=vo.getM_num() %>" readonly /></td>       
+				<%-- <td><input id="m_num" name="m_num" type="text" value="<%=vo.getM_num() %>" readonly /></td>     --%>   
+        	<%-- 	<td><input id="m_num" name="m_num" type="text" class="form-control" value="<%=vo.getM_num() %>" readonly /></td> --%>
         	</tr>
         	<tr>
         		<td><label><b>아이디</b><sub style="color: red;">*&nbsp;</sub></label></td>
-        		<td><input class="w3-border w3-margin-bottom" type="text" placeholder="Enter UserID" id="m_id" name="m_id" style="height: 30px;" required>&nbsp;&nbsp;
-        		<input type="button" value="중복체크"></td>
+        		<!-- <td><input class="w3-border w3-margin-bottom" type="text" placeholder="Enter UserID" id="m_id" name="m_id" style="height: 30px;" required>&nbsp;&nbsp; -->
+				<%-- <td><input id="m_id" name="m_id" type="text" class="form-control" value="<%=vo.getM_id() %>" readonly /></td> --%>
         	</tr>
         	<tr>	
         		<td><label><b>이름</b><sub style="color: red;">*</sub></label></td>&nbsp;
-        		  <td><input class="w3-border w3-margin-bottom" type="text" placeholder="Enter Name" id="m_name" name="m_name" style="height: 30px;"  required></td>
+				<%-- <td><input id="m_name" name="m_name" type="text" class="form-control" value="<%=vo.getM_name() %>" readonly /></td> --%>
         	</tr>	
         		<td><label><b>생년월일</b></label></td>&nbsp;
         		 <td> <input class="w3-border w3-margin-bottom" type="text" placeholder="Enter BirthDay" id="m_birth" name="m_birth" style="height: 30px;"  required></td>

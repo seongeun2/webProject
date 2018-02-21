@@ -204,6 +204,46 @@ public class memDAO {
 		return member;
 		}
 	
+	
+	//모달 회원상세보기
+		public memVO ViewMem(int num) {
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			String sql="";
+			memVO member = null;
+			
+			try {
+				conn = getConnection();
+				
+				sql = "select * from memberbd where m_num = ?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, num);
+				rs = pstmt.executeQuery();
+				
+				if(rs.next()) {
+					member = new memVO();
+					member.setM_num(rs.getInt("m_num"));
+					member.setM_id(rs.getString("m_id"));
+					member.setM_name(rs.getString("m_name"));
+					member.setM_birth(rs.getString("m_birth"));
+					member.setM_email(rs.getString("m_email"));
+					member.setM_pwd(rs.getString("m_pwd"));
+					member.setM_reg_date(rs.getDate("m_reg_date"));
+					member.setM_level(rs.getString("m_level"));
+					
+					}	
+				}catch(Exception e) {
+					e.printStackTrace();
+			}finally {close(conn, rs, pstmt);}
+			return member;
+			}
+	
+	
+	
+	
+	
+	
 	//내정보 보기
 	public memVO myhomeView(String id) {
 		Connection conn = null;
