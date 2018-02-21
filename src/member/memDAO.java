@@ -271,7 +271,7 @@ public class memDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql="delete from memberbd where m_num=? and m_pwd=?";
+		String sql="delete from memberbd where m_num=? and ad_pwd=?";
 		int x = -1;
 		try {
 			conn = getConnection();

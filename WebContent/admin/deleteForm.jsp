@@ -45,13 +45,12 @@ function golist(){
 				<div class="row">                
 	        	</div>
 <div class="account-holder">
-	<h3 align="center">****Haru 회원탈퇴****</h3><br>
 <form name="deleteForm" method="post" action="<%=request.getContextPath() %>/admin/deletePro.jsp">
 	<div class="form-top">
-		<p align=center><b>비밀번호를 입력해주세요</b></p>
+		<p align="center"><b>관리자 비밀번호를 입력해주세요</b></p>
 			<div class="form-group">
 				<label class="control-label required" for="phone">비밀번호: <sup style="color:red">*</sup></label>
-		        <input id="m_pwd" name="m_pwd" type="text" class="form-control" placeholder="Enter Password">
+		        <input id="m_pwd" name="m_pwd" type="password" class="form-control" placeholder="Enter Password">
 		        <input type="hidden" name="num" value="<%=vo.getM_num() %>">
 		    </div>
 	

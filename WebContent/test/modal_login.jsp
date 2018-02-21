@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html lang="en-US">
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Login</title>
+<link rel="stylesheet" href="/webProject/test/login.css" >
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela+Round">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+<div class="leftcolumn">
+<div class="card2">
+	<div id="login">
+
+		<h2><span class="fontawesome-lock"></span>Sign In</h2>
+
+		<form action="javascript:void(0);" method="POST">
+
+			<fieldset>
+
+				<p><label for="email">E-mail address</label></p>
+				<p><input type="email" id="email" value="mail@address.com" onBlur="if(this.value=='')this.value='mail@address.com'" onFocus="if(this.value=='mail@address.com')this.value=''"></p> <!-- JS because of IE support; better: placeholder="mail@address.com" -->
+
+				<p><label for="password">Password</label></p>
+				<p><input type="password" id="password" value="password" onBlur="if(this.value=='')this.value='password'" onFocus="if(this.value=='password')this.value=''"></p> <!-- JS because of IE support; better: placeholder="password" -->
+
+				<p><input type="submit" value="Sign In"></p>
+
+			</fieldset>
+
+		</form>
+
+	</div> <!-- end login -->
+	</div></div>
+
+</body>	
+</html>

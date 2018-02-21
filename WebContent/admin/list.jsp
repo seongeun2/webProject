@@ -48,11 +48,12 @@ String keyWord = request.getParameter("keyWord");
 
 //페이지처리
 int pageSize = 5;
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 String pageNum = request.getParameter("pageNum");
 if(pageNum==null || pageNum==""){
 	pageNum="1"; }
 int currentPage = Integer.parseInt(pageNum);
-int startRow = (currentPage-1) * pageSize;
+int startRow = (currentPage-1) * pageSize+1;
 int endRow = currentPage * pageSize;
 
 memDAO dao = memDAO.getInstance();
@@ -108,7 +109,7 @@ if(count>0){
 				<a href="/webProject/main/main.jsp?contentPage=/admin/content.jsp?memnum=<%=member.getM_num()%>"><%=member.getM_id() %></a></td>
 			<td align="center" width="50"><%=member.getM_name() %> </td>
 			<td align="center" width="70"><%=member.getM_birth() %></td>
-			<td align="center" width="50"><%=member.getM_reg_date() %></td>
+			<td align="center" width="50"><%=sdf.format(member.getM_reg_date()) %></td>
 			<td align="center" width="50"><%=member.getM_level() %></td>
 		</tr><%} %>
 		<%} %>

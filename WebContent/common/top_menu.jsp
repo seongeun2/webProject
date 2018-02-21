@@ -33,7 +33,7 @@ a:visited { color: black; text-decoration: none;}
 <body>
 <center>
 	<div>
-	  <img alt="top" src="/webProject/images/main_top.jpg" style="height: 260px; width: 100%;">
+	  <img alt="top" src="/webProject/images/main_top.jpg" style="height: 230px; width: 100%;">
 	  <jsp:include page="<%=logJsp %>"></jsp:include>
 	  
 	</div>
