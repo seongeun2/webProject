@@ -1,45 +1,41 @@
-<!doctype html>
-
-<html lang="en-US">
-<head>
-
-	<meta charset="utf-8">
-
-	<title>Login</title>
-<link rel="stylesheet" href="/webProject/test/login.css" >
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela+Round">
-
-	<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
-</head>
-
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
-<div class="leftcolumn">
-<div class="card2">
-	<div id="login">
 
-		<h2><span class="fontawesome-lock"></span>Sign In</h2>
+<div class="w3-container">
+  <h2>W3.CSS Login Modal</h2>
+  <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-green w3-large">Login</button>
 
-		<form action="javascript:void(0);" method="POST">
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
 
-			<fieldset>
+      <div class="w3-center"><br>
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+        <img src="img_avatar4.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+      </div>
 
-				<p><label for="email">E-mail address</label></p>
-				<p><input type="email" id="email" value="mail@address.com" onBlur="if(this.value=='')this.value='mail@address.com'" onFocus="if(this.value=='mail@address.com')this.value=''"></p> <!-- JS because of IE support; better: placeholder="mail@address.com" -->
+      <form class="w3-container" action="/action_page.php">
+        <div class="w3-section">
+          <label><b>Username</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
+          <label><b>Password</b></label>
+          <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="psw" required>
+          <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Login</button>
+          <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me
+        </div>
+      </form>
 
-				<p><label for="password">Password</label></p>
-				<p><input type="password" id="password" value="password" onBlur="if(this.value=='')this.value='password'" onFocus="if(this.value=='password')this.value=''"></p> <!-- JS because of IE support; better: placeholder="password" -->
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+        <span class="w3-right w3-padding w3-hide-small">Forgot <a href="#">password?</a></span>
+      </div>
 
-				<p><input type="submit" value="Sign In"></p>
-
-			</fieldset>
-
-		</form>
-
-	</div> <!-- end login -->
-	</div></div>
-
-</body>	
+    </div>
+  </div>
+</div>
+            
+</body>
 </html>

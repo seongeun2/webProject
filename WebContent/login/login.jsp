@@ -12,7 +12,7 @@ function View(value) {
 	if(value == "0"){ // HOME 버튼 클릭시 첫화면으로 이동
 		location.href="main.jsp";
 	}else if(value == "6") {// 로그인페이지
-        location.href="main.jsp?contentPage=/login/login.jsp";
+        location.href="main.jsp?contentPage=/test/modal_login.jsp";
     }else if(value == "7") {// 회원가입페이지
         location.href="main.jsp?contentPage=/join/joinForm.jsp";
     }
@@ -28,33 +28,5 @@ function View(value) {
   		</div>
   	</div>
   	
-  	
-  	
-	<!-- 모달 팝업 -->
-	<div class="container">
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	      <div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-		<h4 class="modal-title" id="myModalLabel">Modal title</h4>
-	      </div>
-	      <div class="modal-body">
-		...
-	      </div>
-	      <div class="modal-footer">
-		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		<button type="button" class="btn btn-primary">Save changes</button>
-	      </div>
-	    </div>
-	  </div>
-	</div>
-
-</div>
-
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="http://googledrive.com/host/0B-QKv6rUoIcGREtrRTljTlQ3OTg"></script><!-- ie10-viewport-bug-workaround.js -->
-<script src="http://googledrive.com/host/0B-QKv6rUoIcGeHd6VV9JczlHUjg"></script><!-- holder.js -->
 </body>
 </html>
