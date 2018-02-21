@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%session.invalidate();%>  //설정된 세션 값 사라짐
+<%session.invalidate();%>  <!-- 설정된 세션값 사라짐 -->
 
 <script type="text/javascript">
 alert("로그아웃 되었습니다.")
