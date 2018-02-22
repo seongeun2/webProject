@@ -52,6 +52,7 @@ function golist(){
 				<label class="control-label required" for="phone">비밀번호: <sup style="color:red">*</sup></label>
 		        <input id="m_pwd" name="m_pwd" type="password" class="form-control" placeholder="Enter Password">
 		        <input type="hidden" name="num" value="<%=vo.getM_num() %>">
+		        <input type="hidden" name="id" value="<%=vo.getM_id() %>">
 		    </div>
 	
      </div>

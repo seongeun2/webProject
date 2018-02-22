@@ -55,7 +55,7 @@ function removeAll(e){
 }
 //날짜선택 자바스크립트
 $(function() {
-	  $( "#datepicker1" ).datepicker({
+	  $( "#main_writeday" ).datepicker({
 	    dateFormat: 'yy-mm-dd'
 	  });
 	});
@@ -68,7 +68,7 @@ $(function() {
 
 <div class="leftcolumn">
 <div class="card2">
-<form action="/webProject/haru_write/writeForm2.jsp" method="post">
+<form action="/webProject/haru_write/writePro.jsp" method="post">
 	<table class=haru_writeForm>
 		<tr>
 			<td>날짜</td>
@@ -78,21 +78,21 @@ $(function() {
 			<td>금액</td>
 		</tr>
 		<tr>
-			<td><input type="text" id="datepicker1"></td>	<!-- 날짜 -->
+			<td><input type="text" id="main_writeday" name="main_writeday"></td>	<!-- 날짜 -->
 			<td>
-			    <select name="selOne" id="selOne" onchange="doChange(this, 'selTwo')">
+			    <select name="main_option" id="main_option" onchange="doChange(this, 'main_account')">
 			        <option value="default">---항목선택---</option>
 			        <option value="1">지출</option>
 			        <option value="2">수입</option>
 			    </select>
 			</td>
 			<td>
-			    <select name="selTwo" id="selTwo">
+			    <select name="main_account" id="main_account">
 			        <option value="default">---계정 선택---</option>
 			    </select>
 			</td>
-			<td><input type="text" name="content"></td>
-			<td><input type="text" name="price"></td>
+			<td><input type="text" name="main_content"></td>
+			<td><input type="text" name="main_price"></td>
 			<td><input type="submit" value="저장"></td>
 		</tr>
 	</table>

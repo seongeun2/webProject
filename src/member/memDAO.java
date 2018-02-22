@@ -306,26 +306,69 @@ public class memDAO {
 	}
 	
 	
-	//회원삭제
-	public int deleteMember(int num, String passwd) {
+	/*//회원삭제
+	public int deleteMember(int num, String passwd, String id) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql="delete from memberbd where m_num=? and ad_pwd=?";
+		
+		
 		int x = -1;
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, num);
-			pstmt.setString(2, passwd);
-			x = pstmt.executeUpdate();
-			}catch(SQLException ex){
-				ex.printStackTrace();
-			}finally {
-				close(conn, rs, pstmt);
+			if(id.equals("admin")) {
+				String sql="delete from memberbd where m_num=? and ad_pwd=?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, num);
+				pstmt.setString(2, passwd);
+				x = pstmt.executeUpdate();
+			}else {
+				String sql="delete from memberbd where m_num=? and m_pwd=?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, num);
+				pstmt.setString(2, passwd);
+				x = pstmt.executeUpdate();
+				
 			}
-		return x;
+		}catch(SQLException ex){
+			ex.printStackTrace();
+		}finally {
+			close(conn, rs, pstmt);
 		}
+		return x;
+		}*/
+			
+
+	
+	
+	
+	
+	
+	//회원삭제
+		public int deleteMember(int num, String passwd) {
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			String sql="delete from memberbd where m_num=? and ad_pwd=?";
+			int x = -1;
+			try {
+				conn = getConnection();
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, num);
+				pstmt.setString(2, passwd);
+				x = pstmt.executeUpdate();
+				}catch(SQLException ex){
+					ex.printStackTrace();
+				}finally {
+					close(conn, rs, pstmt);
+				}
+			return x;
+			}
+	
+	
+	
+	
+	
 
 	//로그인
 	public int login(String id, String pass) {

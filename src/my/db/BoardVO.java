@@ -3,7 +3,7 @@ import java.util.*;
 
 public class BoardVO {
 	private int main_num;			//번호
-	private Date main_writeday;		//작성일
+	private String main_writeday;		//작성일
 	private String main_option;		//항목 (지출, 수입)
 	private String main_account;	//계정과목
 	private String main_content;	//내용
@@ -22,10 +22,10 @@ public class BoardVO {
 	public void setMain_num(int main_num) {
 		this.main_num = main_num;
 	}
-	public Date getMain_writeday() {
+	public String getMain_writeday() {
 		return main_writeday;
 	}
-	public void setMain_writeday(Date main_writeday) {
+	public void setMain_writeday(String main_writeday) {
 		this.main_writeday = main_writeday;
 	}
 	public String getMain_option() {

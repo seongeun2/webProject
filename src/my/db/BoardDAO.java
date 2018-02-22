@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import member.memVO;
+
 public class BoardDAO {
 	private static BoardDAO instance = new BoardDAO();
 	private BoardDAO() {
@@ -68,7 +70,7 @@ public class BoardDAO {
 					do {
 						BoardVO mainboard = new BoardVO();
 					/*	mainboard.setMain_num(rs.getInt("main_num"));*/
-						mainboard.setMain_writeday(rs.getTimestamp("main_writeday"));
+						mainboard.setMain_writeday(rs.getString("main_writeday"));
 						mainboard.setMain_option(rs.getString("main_option"));
 						mainboard.setMain_account(rs.getString("main_account"));
 						mainboard.setMain_content(rs.getString("main_content"));
@@ -111,5 +113,40 @@ public class BoardDAO {
 		return count;
 		}	
 		
+		
+		
+		//가게부 쓰기 (Insert)
+		public void insert(BoardVO mainboard) {
+			String sql="";
+			Connection con = getConnection();
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			int number=0;
+			try {
+				/*pstmt = con.prepareStatement("select MemberSer.nextval from dual");
+				rs = pstmt.executeQuery();
+				if(rs.next()) 
+					number = rs.getInt(1)+1;
+				else number = 1;
+				*/
+				sql="insert into mainBoard(main_num,main_writeday,main_option,main_account,main_content,main_price,m_id) "
+						+ "values(?,?,?,?,?,?,?)";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setInt(1, number);
+				pstmt.setString(2, mainboard.getMain_writeday());
+				pstmt.setString(3, mainboard.getMain_option());
+				pstmt.setString(4, mainboard.getMain_account());
+				pstmt.setString(5, mainboard.getMain_content());
+				pstmt.setInt(6, mainboard.getMain_price());
+				pstmt.setString(7, mainboard.getM_id());
+				
+				pstmt.executeQuery();
+				
+			}catch(SQLException e1) {
+				e1.printStackTrace();
+			}finally {
+				close(con, rs, pstmt);
+			}
+		}
 	
 }
