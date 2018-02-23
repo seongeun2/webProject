@@ -53,7 +53,7 @@ function goback(){
 	        	</div>
 <div class="account-holder">
 	<h3 align="center">****Haru 정보수정****</h3><br>
-	<form name="updateForm" method="post" action="<%=request.getContextPath() %>/admin/updatePro.jsp">
+	<form name="updateForm" method="post" action="<%=request.getContextPath() %>/myhome/updatePro.jsp">
 	<input type="hidden" name="m_num" value="<%=vo.getM_num() %>">
 	<div class="form-top">
 			<div class="form-group">

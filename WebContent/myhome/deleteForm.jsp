@@ -58,7 +58,6 @@ function golist(){
      </div>
         <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12" style="text-align: center">
             <input type="button" class="btn btn-primary btn-block" onclick="memberdelete();" value="È¸¿øÅ»Åð">
-            <input type="button" class="btn btn-primary btn-block" onclick="golist();" value="È¸¿ø¸ñ·Ï">
         </div>
        <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
        </div>

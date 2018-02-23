@@ -2,6 +2,7 @@
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <link type="text/css" href="/webProject/css/main.css" rel="stylesheet" />
+<script type="text/javascript" src="/webProject/js/pageView.js"></script>
 <html>
 <head>
 <style type="text/css">
@@ -19,6 +20,7 @@ function logout() {
 function myhome(){
 	 location.href="main.jsp?contentPage=/myhome/my_content.jsp";
 }
+
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 
@@ -30,6 +32,7 @@ function myhome(){
 <!-- <div class="login" style="background-color: #ff9fa0; height: 50px;"> -->
  <div class="loing_btn" style="text-align: right;">
 	<b style="font-size: 20px; margin-bottom: 10px;"><%=session.getAttribute("name") %>님 환영합니다.</b>
+	<button onclick="homeView('0');"><img src="/webProject/images/home.jpg" alt="홈" style="float: left;"></button>
 	<button onclick="myhome();"><img src="/webProject/images/myhome.jpg" alt="마이홈" style="float: left;"></button>
 	<button onclick="logout();"><img src="/webProject/images/logout.jpg" alt="로그아웃" ></button>
 	</div>
