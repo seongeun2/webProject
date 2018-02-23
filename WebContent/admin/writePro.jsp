@@ -19,7 +19,7 @@
 	dao.insert(member);
 	
 	
-	response.sendRedirect("/admin/list.jsp");
+	response.sendRedirect("/webProject/admin/list.jsp");
 %>
 </body>
 </html>

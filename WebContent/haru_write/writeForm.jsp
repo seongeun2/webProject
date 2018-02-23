@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@page import="member.memDAO"%>
+<%@page import="member.memVO"%>
+<%
+String id=request.getParameter("m_id");
+memVO vo = new memVO();
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!-- 날짜선택 스크립트 -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -69,6 +75,7 @@ $(function() {
 <div class="leftcolumn">
 <div class="card2">
 <form action="/webProject/haru_write/writePro.jsp" method="post">
+<input type="hidden" name="m_id" value="<%=id%>">
 	<table class=haru_writeForm>
 		<tr>
 			<td>날짜</td>

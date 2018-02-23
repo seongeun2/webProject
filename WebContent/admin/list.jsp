@@ -37,7 +37,6 @@ function adminwriteForm(){
 
 function Popup() {
    window.open('../admin/writeForm.jsp', 'popup01', 'width=770,height=888,scrollbars=0,toolbar=0,menubar=no');
-   Window.close();
 }
 </script>
 </head>

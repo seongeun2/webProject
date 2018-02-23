@@ -25,22 +25,22 @@ function insert() {
 		v.m_id.focus();
 		return;
 	}
-	if(v.m_name.value==""){
-		alert("이름을 입력하세요");
-		v.m_name.focus();
-		return;
-	}
 	if(v.m_pwd.value==""){
 		alert("비밀번호를 입력하세요");
 		v.m_pwd.focus();
 		return;
 	}
+	if(v.m_name.value==""){
+		alert("이름을 입력하세요");
+		v.m_name.focus();
+		return;
+	}
 	v.submit();
-	window.opener.top.location.href="/webProject/main/main.jsp?contentPage=/admin/list.jsp";
-	window.close()
+ 	alert("등록되었습니다.");
+	window.close();
 }
 
-function rewrite(){
+function rewrite(){	//다시 작성
 	 document.writeForm.reset();
 }
 	
@@ -68,7 +68,7 @@ function golist(){	//회원목록으로 이동
 	        	</div>
 <div class="account-holder">
 	<h3 align="center">****Haru 회원등록****</h3><br>
-	<form name="writeForm" method="post" action="<%=request.getContextPath() %>/join/joinPro.jsp">
+	<form name="writeForm" method="post" action="<%=request.getContextPath() %>/admin/writePro.jsp">
 	<div class="form-top">
 			<div class="form-group">
 				<label class="control-label required" for="phone">아이디<sup style="color:red">*</sup></label>

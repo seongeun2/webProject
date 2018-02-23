@@ -23,8 +23,10 @@
 	
 	memDAO dao = memDAO.getInstance();
 	dao.insert(member);
-	
-	response.sendRedirect("/webProject/main/main.jsp");
+%>	
+
+<%
+response.sendRedirect("/webProject/main/main.jsp");
 %>
 </body>
 </html>
